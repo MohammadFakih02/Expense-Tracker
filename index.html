@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <title>Expense Tracker</title>
 </head>
 <body>
+    <div>
+        <label for="budgetInput">Enter Budget:</label>
+        <input type="number" id="budgetInput">
+        <button type="button" onclick="changeBudget()">Set Budget</button>
+    </div>
+    
+    <div id="budgetDisplay"></div>
+    </form>
     <h2>Add a Transaction</h2>
     <form id="transactionForm">
         <div class="form-group">
@@ -15,7 +23,10 @@
         </div>
         <div class="form-group">
             <label for="type">Type:</label>
-            <input type="text" id="type" required>
+            <select id="type" required>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="date">Date:</label>
@@ -47,9 +58,14 @@
     <h2>Filters</h2>
     <div class="form-group">
         <label for="filterType">Filter by Type:</label>
-        <input type="text" id="filterType">
+        <select id="filterType">
+            <option value="">Select type</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
         <button type="button" onclick="filterByType()">Apply</button>
     </div>
+    
     <div class="form-group">
         <label for="filterDate">Filter by Date:</label>
         <input type="date" id="filterDate">
@@ -62,6 +78,7 @@
         <input type="number" id="maxPrice">
         <button type="button" onclick="filterByPrice()">Apply</button>
     </div>
+
+    <script src="/index.js"></script>
 </body>
-<style src="index.js"></style>
 </html>
