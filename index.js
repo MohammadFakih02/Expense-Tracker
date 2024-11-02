@@ -126,3 +126,12 @@ let displayFilteredTransactions = (transactions) => {
     });
 
 }
+function clearMemory() {
+    localStorage.removeItem('budget');
+    localStorage.removeItem('transactions');
+    transactions = []; 
+    let budgetDiv = document.getElementById("budgetDisplay");
+    budgetDiv.innerText = '';
+    let tableBody = document.getElementById('transactionsDetail');
+    tableBody.innerHTML = '';
+}
